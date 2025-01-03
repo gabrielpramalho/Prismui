@@ -1,0 +1,244 @@
+---
+title: PrismUI Registry Guide
+description: A comprehensive guide for managing PrismUI components and registry
+---
+
+# PrismUI Registry Guide
+
+This guide explains how to manage components in the PrismUI registry system.
+
+## Directory Structure
+
+```
+src/
+├── components/
+│   └── prismui/           # All PrismUI components live here
+│       ├── button.tsx
+│       ├── marquee.tsx
+│       └── [component].tsx
+├── content/
+│   └── docs/
+│       └── components/    # Component documentation
+│           ├── button.mdx
+│           └── marquee.mdx
+└── registry/             # Registry configuration
+    ├── index.ts         # Main registry
+    └── registry-components.ts
+```
+
+## Adding a New Component
+
+### 1. Create the Component
+Create your component in `src/components/prismui/[component-name].tsx`:
+```tsx
+"use client";
+
+import { cn } from "@/lib/utils";
+
+interface MyComponentProps {
+  // ... props
+}
+
+export default function MyComponent({ ...props }: MyComponentProps) {
+  return (
+    // ... component JSX
+  );
+}
+```
+
+### 2. Register the Component
+Add your component to `src/registry/registry-components.ts`:
+```typescript
+export const components: RegistryItem[] = [
+  {
+    name: "my-component",
+    type: "registry:ui",
+    category: "components",
+    subcategory: "display", // or appropriate category
+    files: [
+      {
+        path: "components/prismui/my-component.tsx",
+        type: "registry:ui",
+        content: `...component code...`
+      }
+    ],
+    dependencies: ["@/lib/utils", ...other-deps],
+  }
+];
+```
+
+### 3. Create Documentation
+Create `src/content/docs/components/my-component.mdx`:
+```mdx
+---
+title: MyComponent
+publishedAt: 2024-01-10
+summary: Description of your component
+author: your-name
+slug: components/my-component
+---
+
+<ComponentPreview name="my-component" />
+
+<Note variant="info">
+  Component description
+</Note>
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <ComponentSource name="my-component" isCli />
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="my-component" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Props
+
+### MyComponent
+
+| Prop      | Type    | Description           | Default |
+| --------- | ------- | --------------------- | ------- |
+| prop1     | string  | Description of prop1  | -       |
+| prop2     | boolean | Description of prop2  | false   |
+
+## Usage
+
+\`\`\`tsx
+import { MyComponent } from "@/components/prismui/my-component"
+
+export default function Example() {
+  return (
+    <MyComponent>
+      // ... usage example
+    </MyComponent>
+  )
+}
+\`\`\`
+```
+
+### 4. Build the Registry
+Run the build command to update the registry:
+```bash
+pnpm build:registry
+```
+
+## Registry Structure
+
+The build process creates:
+1. `__registry__/index.tsx` - The main registry file
+2. `registry/default/components/prismui/` - Component files
+3. `public/r/` - Public registry files
+
+## Component Guidelines
+
+1. **Naming**:
+   - Use kebab-case for file names: `my-component.tsx`
+   - Use PascalCase for component names: `MyComponent`
+
+2. **Exports**:
+   - Use default exports for components
+   - Include proper TypeScript interfaces
+   - Add JSDoc comments for props
+
+3. **Dependencies**:
+   - List all required dependencies in the registry
+   - Use relative imports from `@/lib` or `@/components`
+
+4. **Documentation**:
+   - Include a clear description
+   - Provide usage examples
+   - Document all props
+   - Show common use cases
+
+## Updating Components
+
+1. Update the component code in `src/components/prismui/`
+2. Update the registry entry if dependencies changed
+3. Update the documentation if needed
+4. Run `pnpm build:registry`
+
+## Troubleshooting
+
+If components don't appear in the documentation:
+1. Check the component is properly registered
+2. Verify the file paths in the registry
+3. Ensure the documentation uses the correct component name
+4. Rebuild the registry
+
+## Example Component Registration
+
+Here's a complete example of adding a button component:
+
+1. **Component File** (`src/components/prismui/button.tsx`):
+```tsx
+"use client";
+
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "outline";
+}
+
+export default function Button({ className, variant = "default", ...props }: ButtonProps) {
+  return (
+    <button
+      className={cn("button-styles", className)}
+      {...props}
+    />
+  );
+}
+```
+
+2. **Registry Entry**:
+```typescript
+{
+  name: "button",
+  type: "registry:ui",
+  category: "components",
+  subcategory: "form",
+  files: [{
+    path: "components/prismui/button.tsx",
+    type: "registry:ui",
+    content: `...component code...`
+  }],
+  dependencies: ["@/lib/utils"]
+}
+```
+
+3. **Documentation** (`src/content/docs/components/button.mdx`):
+```mdx
+---
+title: Button
+---
+
+<ComponentPreview name="button" />
+
+## Usage
+<ComponentSource name="button" />
+```
+
+4. **Build**:
+```bash
+pnpm build:registry
+```
+
+## Notes
+
+- Always run `pnpm build:registry` after making changes
+- Keep documentation in sync with component changes
+- Follow the established naming conventions
+- Test components in the documentation before committing
+
+Remember to update this guide as the registry system evolves. 
