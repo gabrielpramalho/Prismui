@@ -16,7 +16,7 @@ export default function Footer() {
           </a>
           . The source code is available on{" "}
           <a
-            href="https://github.com/christer-dev/prismui"
+            href="https://github.com/Codehagen/Prismui"
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
@@ -27,7 +27,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/christer-dev/prismui"
+            href="https://github.com/Codehagen/Prismui"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"
@@ -36,7 +36,7 @@ export default function Footer() {
             <span className="sr-only">GitHub</span>
           </a>
           <a
-            href="https://twitter.com/christer_dev"
+            href="https://twitter.com/Codehagen"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"

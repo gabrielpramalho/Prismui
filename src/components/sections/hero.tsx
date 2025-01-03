@@ -71,7 +71,7 @@ function HeroContent() {
           Documentation
         </Link>
         <Link
-          href="/components"
+          href="/docs"
           className={cn(
             buttonVariants({ variant: "outline", size: "lg" }),
             "gap-2"
