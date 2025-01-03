@@ -93,5 +93,27 @@ export const Index: Record<string, any> = {
       subcategory: "form",
       chunks: []
     },
+    "button-group": {
+      name: "button-group",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/components/prismui/button-group.tsx"],
+      component: React.lazy(() => import("@/components/prismui/button-group.tsx")),
+      source: "",
+      category: "components",
+      subcategory: "form",
+      chunks: []
+    },
+    "expandable-card": {
+      name: "expandable-card",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/components/prismui/expandable-card.tsx"],
+      component: React.lazy(() => import("@/components/prismui/expandable-card.tsx")),
+      source: "",
+      category: "components",
+      subcategory: "display",
+      chunks: []
+    },
   },
 }

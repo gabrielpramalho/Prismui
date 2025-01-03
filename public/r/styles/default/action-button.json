@@ -10,7 +10,6 @@
     }
   ],
   "dependencies": [
-    "@/lib/utils",
     "lucide-react",
     "class-variance-authority",
     "@/components/ui/button"
