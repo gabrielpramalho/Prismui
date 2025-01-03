@@ -3,28 +3,30 @@ import Link from "next/link";
 import BlurImage from "@/lib/blog/blur-image";
 import { timeAgo } from "@/lib/utils";
 
+const authors = {
+  codehagen: {
+    name: "Christer Hagen",
+    image:
+      "https://imagedelivery.net/r-6-yk-gGPtjfbIST9-8uA/addc4b60-4c8f-47d7-10ab-6f9048432500/public",
+  },
+  motormary: {
+    name: "Mathias Moen",
+    image:
+      "https://imagedelivery.net/r-6-yk-gGPtjfbIST9-8uA/4ee5b8c7-29a6-484a-844d-d99c52a49300/public",
+  },
+} as const;
+
+type AuthorProps = {
+  username: keyof typeof authors;
+  updatedAt?: string;
+  imageOnly?: boolean;
+};
+
 export default async function Author({
   username,
   updatedAt,
   imageOnly,
-}: {
-  username: string;
-  updatedAt?: string;
-  imageOnly?: boolean;
-}) {
-  const authors = {
-    codehagen: {
-      name: "Christer Hagen",
-      image:
-        "https://imagedelivery.net/r-6-yk-gGPtjfbIST9-8uA/addc4b60-4c8f-47d7-10ab-6f9048432500/public",
-    },
-    motormary: {
-      name: "Mathias Moen",
-      image:
-        "https://imagedelivery.net/r-6-yk-gGPtjfbIST9-8uA/4ee5b8c7-29a6-484a-844d-d99c52a49300/public",
-    },
-  };
-
+}: AuthorProps) {
   if (!authors[username]) {
     console.error(`Author not found: ${username}`);
     return null;
