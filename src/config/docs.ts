@@ -67,8 +67,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Pricing",
           href: "/docs/sections/pricing",
-          isNew: true,
-          isPro: true,
         },
       ],
     },

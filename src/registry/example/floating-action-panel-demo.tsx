@@ -17,19 +17,24 @@ export default function FloatingActionPanelDemo() {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex min-h-[450px] items-center justify-center gap-4 mb-8">
       <FloatingActionPanelRoot>
         {({ mode }) => (
           <>
-            {/* Action Panel */}
-            <FloatingActionPanelTrigger title="Project Actions" mode="actions">
-              Actions
-            </FloatingActionPanelTrigger>
+            <div className="flex items-center space-x-4">
+              {/* Action Panel */}
+              <FloatingActionPanelTrigger
+                title="Project Actions"
+                mode="actions"
+              >
+                Actions
+              </FloatingActionPanelTrigger>
 
-            {/* Note Panel */}
-            <FloatingActionPanelTrigger title="Add Project Note" mode="note">
-              Add Note
-            </FloatingActionPanelTrigger>
+              {/* Note Panel */}
+              <FloatingActionPanelTrigger title="Add Project Note" mode="note">
+                Add Note
+              </FloatingActionPanelTrigger>
+            </div>
 
             <FloatingActionPanelContent>
               {mode === "actions" ? (
@@ -117,19 +122,21 @@ export default function FloatingActionPanelDemo() {
   }
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex min-h-[350px] items-center justify-center gap-4 mb-8">
       <FloatingActionPanelRoot>
         {({ mode }) => (
           <>
-            {/* Action Panel */}
-            <FloatingActionPanelTrigger title="Project Actions" mode="actions">
-              Actions
-            </FloatingActionPanelTrigger>
+            <div className="flex items-center space-x-4">
+              {/* Action Panel */}
+              <FloatingActionPanelTrigger title="Project Actions" mode="actions">
+                Actions
+              </FloatingActionPanelTrigger>
 
-            {/* Note Panel */}
-            <FloatingActionPanelTrigger title="Add Project Note" mode="note">
-              Add Note
-            </FloatingActionPanelTrigger>
+              {/* Note Panel */}
+              <FloatingActionPanelTrigger title="Add Project Note" mode="note">
+                Add Note
+              </FloatingActionPanelTrigger>
+            </div>
 
             <FloatingActionPanelContent>
               {mode === "actions" ? (

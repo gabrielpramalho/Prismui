@@ -11,7 +11,7 @@ import {
 
 export default function FloatingActionPanelBasic() {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mb-8">
       <FloatingActionPanelRoot>
         {({ mode }) => (
           <>
@@ -55,7 +55,7 @@ import {
 
 export default function FloatingActionPanelBasic() {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mb-8">
       <FloatingActionPanelRoot>
         {({ mode }) => (
           <>
