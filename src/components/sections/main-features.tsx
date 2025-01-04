@@ -11,6 +11,8 @@ import {
 } from "@/components/prismui/floating-action-panel";
 import { ProjectStatusCard } from "@/components/prismui/expandable-card";
 import { Plus, Upload, Palette, Share2, BookMarked } from "lucide-react";
+import DisplayCards from "@/components/prismui/display-cards";
+import { LogoCarousel } from "@/components/prismui/logo-carousel";
 
 interface FeatureCardProps {
   title: string;
@@ -120,11 +122,13 @@ export function MainFeatures() {
 
       <div className="grid gap-8 md:grid-cols-2">
         <FeatureCard
-          title="Floating Action Panel"
-          description="A beautiful floating panel that appears from any trigger element. Perfect for contextual actions and quick forms."
+          title="Display Cards"
+          description="Beautiful, animated display cards with skewed design and hover effects. Perfect for showcasing featured content or important updates."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50">
-            <FloatingActionPanelDemo />
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8 overflow-hidden">
+            <div className="scale-[0.80] origin-center -mt-16">
+              <DisplayCards />
+            </div>
           </div>
         </FeatureCard>
 
@@ -134,6 +138,24 @@ export function MainFeatures() {
         >
           <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8">
             <ExpandableCardDemo />
+          </div>
+        </FeatureCard>
+
+        <FeatureCard
+          title="Floating Action Panel"
+          description="A beautiful floating panel that appears from any trigger element. Perfect for contextual actions and quick forms."
+        >
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50">
+            <FloatingActionPanelDemo />
+          </div>
+        </FeatureCard>
+
+        <FeatureCard
+          title="Logo Carousel"
+          description="Smooth, animated logo carousel for showcasing partners, integrations, or brand associations with elegant transitions."
+        >
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8">
+            <LogoCarousel columns={2} />
           </div>
         </FeatureCard>
 
