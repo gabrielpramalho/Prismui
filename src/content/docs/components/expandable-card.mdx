@@ -29,18 +29,9 @@ related: ["introduction"]
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
-      <Step>Install the required dependencies.</Step>
-      ```bash
-      npm install framer-motion lucide-react
-      # or
-      yarn add framer-motion lucide-react
-      # or
-      pnpm add framer-motion lucide-react
-      ```
-      <Step>Copy the component to your project.</Step>
-      ```tsx
-      import { ProjectStatusCard } from "@/components/prismui/expandable-card"
-      ```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="expandable-card" />
+      <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
 </Tabs>
@@ -48,23 +39,7 @@ related: ["introduction"]
 ### Hooks
 You also need to install the `useExpandable` hook.
 
-```tsx
-import { useState, useCallback } from "react";
-import { useSpring } from "framer-motion";
-
-export function useExpandable(initialState = false) {
-  const [isExpanded, setIsExpanded] = useState(initialState);
-
-  const springConfig = { stiffness: 300, damping: 30 };
-  const animatedHeight = useSpring(0, springConfig);
-
-  const toggleExpand = useCallback(() => {
-    setIsExpanded((prev) => !prev);
-  }, []);
-
-  return { isExpanded, toggleExpand, animatedHeight };
-}
-```
+<ComponentSource name="use-expandable" />
 
 ## Props
 

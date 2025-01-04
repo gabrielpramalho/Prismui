@@ -13,9 +13,6 @@ related: ["introduction"]
   The Hero Badge component provides an elegant way to highlight important information or links with smooth animations and hover effects. Perfect for announcements, feature highlights, or call-to-action elements.
 </Note>
 
-## Examples
-
-<ComponentPreview name="hero-badge-demo" />
 
 ## Installation
 
@@ -29,34 +26,16 @@ related: ["introduction"]
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
-      <Step>Install the required dependencies.</Step>
-      ```bash
-      npm install framer-motion
-      # or
-      yarn add framer-motion
-      # or
-      pnpm add framer-motion
-      ```
-      <Step>Copy the component to your project.</Step>
-      ```tsx
-      import { HeroBadge } from "@/components/prismui/hero-badge"
-      ```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="hero-badge" />
+      <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
 </Tabs>
 
-## Props
+## Examples
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| text | string | - | The text content of the badge |
-| href | string | - | Optional URL for the badge to link to |
-| icon | ReactNode | - | Optional icon component to display before the text |
-| endIcon | ReactNode | - | Optional icon component to display after the text |
-| variant | "default" \| "outline" \| "ghost" | "default" | The visual style variant of the badge |
-| size | "sm" \| "md" \| "lg" | "md" | The size of the badge |
-| className | string | - | Additional CSS classes to apply |
-| onClick | () => void | - | Optional click handler (used when no href is provided) |
+<ComponentPreview name="hero-badge-demo" />
 
 ## Usage
 
@@ -178,6 +157,15 @@ export default function Example() {
 - Responsive design
 - Accessibility features
 
-## Credits
+## Props
 
-HeroBadge was created by [codehagen](https://twitter.com/codehagen). The component was designed to provide an elegant solution for highlighting important information with modern UI patterns. 
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| text | string | - | The text content of the badge |
+| href | string | - | Optional URL for the badge to link to |
+| icon | ReactNode | - | Optional icon component to display before the text |
+| endIcon | ReactNode | - | Optional icon component to display after the text |
+| variant | "default" \| "outline" \| "ghost" | "default" | The visual style variant of the badge |
+| size | "sm" \| "md" \| "lg" | "md" | The size of the badge |
+| className | string | - | Additional CSS classes to apply |
+| onClick | () => void | - | Optional click handler (used when no href is provided) |

@@ -25,8 +25,95 @@
 import { HeroTest } from "@/registry/section/hero-test";
 import { type RegistryItem } from "./schema";
 import Pricing from "./section/pricing";
+import HeroSection from "./section/hero";
 
 export const sections: RegistryItem[] = [
+  {
+    name: "hero",
+    type: "registry:block",
+    component: HeroSection,
+    category: "sections",
+    subcategory: "hero",
+    code: `"use client";
+
+import Hero from "@/components/prismui/hero";
+import { Icons } from "@/components/icons";
+import { ComponentPreview } from "@/components/sections/component-preview";
+
+export default function HeroSection() {
+  return (
+    <Hero
+      pill={{
+        text: "New! PrismUI Components",
+        href: "/docs",
+        icon: <Icons.logo className="h-4 w-4" />,
+      }}
+      content={{
+        title: "The better way to",
+        titleHighlight: "build apps fast",
+        description:
+          "A fully customizable component library built on top of shadcn/ui. Beautiful, accessible, and ready for production.",
+        primaryAction: {
+          href: "/docs",
+          text: "Documentation",
+          icon: <Icons.book className="h-4 w-4" />,
+        },
+        secondaryAction: {
+          href: "/docs",
+          text: "Components",
+          icon: <Icons.component className="h-4 w-4" />,
+        },
+      }}
+      preview={<ComponentPreview />}
+    />
+  );
+}`,
+    files: [
+      {
+        path: "registry/section/hero.tsx",
+        type: "registry:block",
+        content: `"use client";
+
+import Hero from "@/components/prismui/hero";
+import { Icons } from "@/components/icons";
+import { ComponentPreview } from "@/components/sections/component-preview";
+
+export default function HeroSection() {
+  return (
+    <Hero
+      pill={{
+        text: "New! PrismUI Components",
+        href: "/docs",
+        icon: <Icons.logo className="h-4 w-4" />,
+      }}
+      content={{
+        title: "The better way to",
+        titleHighlight: "build apps fast",
+        description:
+          "A fully customizable component library built on top of shadcn/ui. Beautiful, accessible, and ready for production.",
+        primaryAction: {
+          href: "/docs",
+          text: "Documentation",
+          icon: <Icons.book className="h-4 w-4" />,
+        },
+        secondaryAction: {
+          href: "/docs",
+          text: "Components",
+          icon: <Icons.component className="h-4 w-4" />,
+        },
+      }}
+      preview={<ComponentPreview />}
+    />
+  );
+}`,
+      },
+    ],
+    dependencies: [
+      "@/components/prismui/hero",
+      "@/components/icons",
+      "@/components/sections/component-preview",
+    ],
+  },
   {
     name: "hero-test",
     type: "registry:block",

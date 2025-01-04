@@ -78,6 +78,8 @@ import DisplayCardsBasic, {
 import DisplayCardsDemo, {
   demoSource as DisplayCardsDemoSource,
 } from "./example/display-cards-demo";
+import HeroBasic, { demoSource as HeroBasicSource } from "./example/hero-basic";
+import HeroDemo, { demoSource as HeroDemoSource } from "./example/hero-demo";
 
 export const examples: RegistryItem[] = [
   {
@@ -254,6 +256,25 @@ export const examples: RegistryItem[] = [
       "@/components/prismui/display-cards",
       "@/components/ui/card",
       "lucide-react",
+    ],
+  },
+  {
+    name: "hero-basic",
+    type: "examples",
+    component: HeroBasic,
+    code: HeroBasicSource,
+    dependencies: ["@/components/prismui/hero", "@/components/icons"],
+  },
+  {
+    name: "hero-demo",
+    type: "examples",
+    component: HeroDemo,
+    code: HeroDemoSource,
+    dependencies: [
+      "@/components/prismui/hero",
+      "@/components/icons",
+      "@/components/ui/card",
+      "@/components/sections/component-preview",
     ],
   },
 ];

@@ -13,10 +13,6 @@ related: ["introduction"]
   The Action Button component provides a seamless way to handle loading states in forms and async operations. Perfect for form submissions, data fetching, and any action that requires user feedback.
 </Note>
 
-## Examples
-
-<ComponentPreview name="action-button-demo" />
-
 ## Installation
 
 <Tabs defaultValue="cli">
@@ -29,31 +25,16 @@ related: ["introduction"]
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
-      <Step>Install the required dependencies.</Step>
-      ```bash
-      npm install lucide-react class-variance-authority
-      # or
-      yarn add lucide-react class-variance-authority
-      # or
-      pnpm add lucide-react class-variance-authority
-      ```
-      <Step>Copy the component to your project.</Step>
-      ```tsx
-      import { ActionButton } from "@/components/prismui/action-button"
-      ```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="action-button" />
+      <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
 </Tabs>
 
-## Props
+## Examples
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| isPending | boolean | Whether the button is in a loading state |
-| onClick | () => void | Optional click handler that prevents default form submission |
-| variant | "default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link" | The visual variant of the button |
-| size | "default" \| "sm" \| "lg" \| "icon" | The size of the button |
-| children | React.ReactNode | The content to display inside the button |
+<ComponentPreview name="action-button-demo" />
 
 ## Usage
 
@@ -153,3 +134,13 @@ export default function SubmitButton() {
 - Accessible loading states
 - Form integration support
 - Server actions compatibility
+
+## Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| isPending | boolean | Whether the button is in a loading state |
+| onClick | () => void | Optional click handler that prevents default form submission |
+| variant | "default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link" | The visual variant of the button |
+| size | "default" \| "sm" \| "lg" \| "icon" | The size of the button |
+| children | React.ReactNode | The content to display inside the button |

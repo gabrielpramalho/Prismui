@@ -5,6 +5,17 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
+    "hero": {
+      name: "hero",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: ["src/registry/section/hero.tsx"],
+      component: React.lazy(() => import("@/src/registry/registry/section/hero.tsx")),
+      source: "src/registry/registry/section/hero.tsx",
+      category: "sections",
+      subcategory: "hero",
+      chunks: []
+    },
     "hero-test": {
       name: "hero-test",
       type: "registry:block",
@@ -124,6 +135,17 @@ export const Index: Record<string, any> = {
       source: "",
       category: "components",
       subcategory: "display",
+      chunks: []
+    },
+    "hero": {
+      name: "hero",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/components/prismui/hero.tsx"],
+      component: React.lazy(() => import("@/components/prismui/hero.tsx")),
+      source: "",
+      category: "components",
+      subcategory: "marketing",
       chunks: []
     },
   },

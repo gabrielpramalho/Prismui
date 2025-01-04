@@ -1,7 +1,7 @@
 ---
 title: NumberFlow
 publishedAt: 2025-01-02
-summary: A smooth, animated number transition component with support for various formats and animations.
+summary: A smooth, animated number transition component with support for various formats and animations. NumberFlow was created by Maxwell Barvian.
 author: codehagen
 slug: components/number-flow
 related: ["introduction"]
@@ -13,10 +13,6 @@ related: ["introduction"]
   The NumberFlow component provides smooth, animated number transitions with support for various formats including currency, percentage, and compact notation.
   Perfect for dynamic counters, prices, statistics, and any numeric data that changes over time.
 </Note>
-
-## Examples
-
-<ComponentPreview name="number-flow-demo" />
 
 ## Installation
 
@@ -30,34 +26,16 @@ related: ["introduction"]
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
-      <Step>Install the package using your preferred package manager.</Step>
-      ```bash
-      npm install @number-flow/react
-      # or
-      yarn add @number-flow/react
-      # or
-      pnpm add @number-flow/react
-      ```
-      <Step>Import and use the component in your project.</Step>
-      ```tsx
-      import NumberFlow from '@number-flow/react'
-      ```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="number-flow" />
+      <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
 </Tabs>
 
-## Props
+## Examples
 
-| Prop | Type | Description | Default |
-| --- | --- | --- | --- |
-| value | number | The number to display and animate | Required |
-| format | Intl.NumberFormatOptions | Formatting options for the number | {} |
-| locales | string &#124; string[] | The locale(s) for number formatting | undefined |
-| prefix | string | Text to display before the number | undefined |
-| suffix | string | Text to display after the number | undefined |
-| spinTiming | EffectTiming | Timing for digit spin animations | transformTiming |
-| willChange | boolean | Optimize for animations | false |
-| continuous | boolean | Enable continuous updates | false |
+<ComponentPreview name="number-flow-demo" />
 
 ## Usage
 
@@ -156,6 +134,19 @@ export default function Example() {
 - Uses spring-based animations for smooth transitions
 - Supports various number formats through Intl.NumberFormat
 - Optimized for performance with `willChange` prop
+
+## Props
+
+| Prop | Type | Description | Default |
+| --- | --- | --- | --- |
+| value | number | The number to display and animate | Required |
+| format | Intl.NumberFormatOptions | Formatting options for the number | {} |
+| locales | string &#124; string[] | The locale(s) for number formatting | undefined |
+| prefix | string | Text to display before the number | undefined |
+| suffix | string | Text to display after the number | undefined |
+| spinTiming | EffectTiming | Timing for digit spin animations | transformTiming |
+| willChange | boolean | Optimize for animations | false |
+| continuous | boolean | Enable continuous updates | false |
 
 ## Credits
 

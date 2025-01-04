@@ -13,10 +13,6 @@ related: ["introduction"]
   The Logo Carousel component provides a smooth, animated way to showcase logos in multiple columns. Perfect for partner showcases, client logos, and brand displays with automatic cycling and responsive design.
 </Note>
 
-## Examples
-
-<ComponentPreview name="logo-carousel-demo" />
-
 ## Installation
 
 <Tabs defaultValue="cli">
@@ -29,27 +25,16 @@ related: ["introduction"]
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
-      <Step>Install the required dependencies.</Step>
-      ```bash
-      npm install framer-motion
-      # or
-      yarn add framer-motion
-      # or
-      pnpm add framer-motion
-      ```
-      <Step>Copy the component to your project.</Step>
-      ```tsx
-      import { LogoCarousel } from "@/components/prismui/logo-carousel"
-      ```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="logo-carousel" />
+      <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
 </Tabs>
 
-## Props
+## Examples
 
-| Prop | Type | Description | Default |
-| --- | --- | --- | --- |
-| columns | number | Number of columns to display | 2 |
+<ComponentPreview name="logo-carousel-demo" />
 
 ## Usage
 
@@ -149,6 +134,8 @@ const customLogos: Logo[] = [
 - SSR compatibility
 - Accessibility features
 
-## Credits
+## Props
 
-Logo Carousel was created by [codehagen](https://twitter.com/codehagen). The animations were inspired by various carousel implementations and optimized for performance and accessibility. 
+| Prop | Type | Description | Default |
+| --- | --- | --- | --- |
+| columns | number | Number of columns to display | 2 |
