@@ -31,9 +31,7 @@ export default function Header() {
 
   return (
     <header
-      className={
-        "sticky top-0 z-50 bg-background/60 backdrop-blur border-b"
-      }
+      className={"sticky top-0 z-50 bg-background/60 backdrop-blur border-b"}
     >
       <div className="flex justify-between items-center container border-x py-2">
         <div className="flex items-center">
@@ -51,6 +49,15 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/updates"
+            className={buttonVariants({
+              variant: "default",
+              size: "sm",
+            })}
+          >
+            Get Updates
+          </Link>
           <ThemeToggle />
           <div className="lg:hidden">
             <Drawer />
@@ -59,7 +66,7 @@ export default function Header() {
       </div>
       <hr
         className={cn(
-          "absolute w-full bottom-0 transition-opacity duration-300 ease-in-out",
+          "absolute w-full bottom-0 transition-opacity duration-300 ease-in-out"
         )}
       />
     </header>
