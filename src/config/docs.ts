@@ -65,6 +65,10 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/hero",
         },
         {
+          title: "Open Source",
+          href: "/docs/components/open-source",
+        },
+        {
           title: "Logo Carousel",
           href: "/docs/components/logo-carousel",
         },

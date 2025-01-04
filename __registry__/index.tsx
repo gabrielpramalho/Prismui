@@ -148,5 +148,16 @@ export const Index: Record<string, any> = {
       subcategory: "marketing",
       chunks: []
     },
+    "open-source": {
+      name: "open-source",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/components/prismui/open-source.tsx"],
+      component: React.lazy(() => import("@/components/prismui/open-source.tsx")),
+      source: "",
+      category: "components",
+      subcategory: "marketing",
+      chunks: []
+    },
   },
 }

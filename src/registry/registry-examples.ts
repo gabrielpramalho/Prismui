@@ -80,6 +80,12 @@ import DisplayCardsDemo, {
 } from "./example/display-cards-demo";
 import HeroBasic, { demoSource as HeroBasicSource } from "./example/hero-basic";
 import HeroDemo, { demoSource as HeroDemoSource } from "./example/hero-demo";
+import OpenSourceBasic, {
+  demoSource as OpenSourceBasicSource,
+} from "./example/open-source-basic";
+import OpenSourceDemo, {
+  demoSource as OpenSourceDemoSource,
+} from "./example/open-source-demo";
 
 export const examples: RegistryItem[] = [
   {
@@ -276,5 +282,19 @@ export const examples: RegistryItem[] = [
       "@/components/ui/card",
       "@/components/sections/component-preview",
     ],
+  },
+  {
+    name: "open-source-basic",
+    type: "examples",
+    component: OpenSourceBasic,
+    code: OpenSourceBasicSource,
+    dependencies: ["@/components/prismui/open-source"],
+  },
+  {
+    name: "open-source-demo",
+    type: "examples",
+    component: OpenSourceDemo,
+    code: OpenSourceDemoSource,
+    dependencies: ["@/components/prismui/open-source", "@/components/ui/card"],
   },
 ];
