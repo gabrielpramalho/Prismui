@@ -34,47 +34,50 @@ interface OpenSourceProps {
   className?: string;
 }
 
-async function getGithubStats(
-  repository: string,
-  githubToken?: string
-): Promise<Stats> {
-  try {
-    const [repoResponse, contributorsResponse] = await Promise.all([
-      fetch(`https://api.github.com/repos/${repository}`, {
-        ...(githubToken && {
-          headers: {
-            Authorization: `Bearer ${githubToken}`,
-            "Content-Type": "application/json",
-          },
-        }),
-        next: { revalidate: 3600 },
-      }),
-      fetch(`https://api.github.com/repos/${repository}/contributors`, {
-        ...(githubToken && {
-          headers: {
-            Authorization: `Bearer ${githubToken}`,
-            "Content-Type": "application/json",
-          },
-        }),
-        next: { revalidate: 3600 },
-      }),
-    ]);
-
-    if (!repoResponse.ok || !contributorsResponse.ok) {
-      return { stars: 0, contributors: [] };
-    }
-
-    const repoData = await repoResponse.json();
-    const contributorsData = await contributorsResponse.json();
-
-    return {
-      stars: repoData.stargazers_count,
-      contributors: contributorsData as Contributor[],
-    };
-  } catch (error) {
-    return { stars: 0, contributors: [] };
-  }
-}
+/**
+ * Example of how to fetch GitHub stats in your server component or action:
+ *
+ * ```ts
+ * async function getGithubStats(repository: string, githubToken?: string): Promise<Stats> {
+ *   try {
+ *     const [repoResponse, contributorsResponse] = await Promise.all([
+ *       fetch(`https://api.github.com/repos/${repository}`, {
+ *         ...(githubToken && {
+ *           headers: {
+ *             Authorization: `Bearer ${githubToken}`,
+ *             "Content-Type": "application/json",
+ *           },
+ *         }),
+ *         next: { revalidate: 3600 },
+ *       }),
+ *       fetch(`https://api.github.com/repos/${repository}/contributors`, {
+ *         ...(githubToken && {
+ *           headers: {
+ *             Authorization: `Bearer ${githubToken}`,
+ *             "Content-Type": "application/json",
+ *           },
+ *         }),
+ *         next: { revalidate: 3600 },
+ *       }),
+ *     ]);
+ *
+ *     if (!repoResponse.ok || !contributorsResponse.ok) {
+ *       return { stars: 0, contributors: [] };
+ *     }
+ *
+ *     const repoData = await repoResponse.json();
+ *     const contributorsData = await contributorsResponse.json();
+ *
+ *     return {
+ *       stars: repoData.stargazers_count,
+ *       contributors: contributorsData as Contributor[],
+ *     };
+ *   } catch (error) {
+ *     return { stars: 0, contributors: [] };
+ *   }
+ * }
+ * ```
+ */
 
 function StarIcon({
   className,
@@ -293,29 +296,19 @@ function OpenSourceContent({
   );
 }
 
-async function OpenSourceData({
+export default function OpenSource({
   repository,
-  githubToken,
   defaultStats = { stars: 0, contributors: [] },
   ...props
 }: OpenSourceProps) {
-  const stats = await getGithubStats(repository, githubToken);
-  return <OpenSourceContent repository={repository} {...stats} {...props} />;
-}
-
-export default function OpenSource(props: OpenSourceProps) {
+  // This is a placeholder component. You should implement the data fetching
+  // in your server component using the example code above.
   return (
-    <Suspense
-      fallback={
-        <OpenSourceContent
-          repository={props.repository}
-          stars={props.defaultStats?.stars || 0}
-          contributors={props.defaultStats?.contributors || []}
-          {...props}
-        />
-      }
-    >
-      <OpenSourceData {...props} />
-    </Suspense>
+    <OpenSourceContent
+      repository={repository}
+      stars={defaultStats.stars}
+      contributors={defaultStats.contributors}
+      {...props}
+    />
   );
 }
