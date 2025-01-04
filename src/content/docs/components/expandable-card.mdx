@@ -13,10 +13,6 @@ related: ["introduction"]
   The Expandable Card component provides an elegant way to display project status information with an expandable interface. Perfect for project dashboards, task management, and GitHub repository overviews.
 </Note>
 
-## Examples
-
-<ComponentPreview name="expandable-card-demo" />
-
 ## Installation
 
 <Tabs defaultValue="cli">
@@ -36,22 +32,14 @@ related: ["introduction"]
   </TabsContent>
 </Tabs>
 
+## Examples
+
+<ComponentPreview name="expandable-card-demo" />
+
 ### Hooks
 You also need to install the `useExpandable` hook.
 
 <ComponentSource name="use-expandable" />
-
-## Props
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| title | string | Project title |
-| progress | number | Progress percentage (0-100) |
-| dueDate | string | Project due date |
-| contributors | Contributor[] | Array of project contributors |
-| tasks | Task[] | Array of project tasks |
-| githubStars | number | Number of GitHub stars |
-| openIssues | number | Number of open issues |
 
 ## Usage
 
@@ -170,6 +158,15 @@ interface ProjectStatusCardProps {
 - Responsive layout
 - Accessibility features
 
-## Credits
+## Props
 
-ExpandableCard was created by [codehagen](https://twitter.com/codehagen). The component was designed to provide an elegant solution for displaying project status information with modern UI patterns. 
+| Prop | Type | Description |
+| --- | --- | --- |
+| title | string | Project title |
+| progress | number | Progress percentage (0-100) |
+| dueDate | string | Project due date |
+| contributors | Contributor[] | Array of project contributors |
+| tasks | Task[] | Array of project tasks |
+| githubStars | number | Number of GitHub stars |
+| openIssues | number | Number of open issues |
+ 

@@ -13,11 +13,6 @@ related: ["introduction"]
   The Floating Action Panel component provides a flexible way to create floating action menus and forms. Perfect for contextual actions, quick access menus, and note-taking interfaces.
 </Note>
 
-<div className="space-y-8">
-## Examples
-
-<ComponentPreview name="floating-action-panel-demo" />
-</div>
 
 ## Installation
 
@@ -38,68 +33,11 @@ related: ["introduction"]
   </TabsContent>
 </Tabs>
 
-## Components
+<div className="space-y-8">
+## Examples
 
-### FloatingActionPanelRoot
-
-The root component that manages the state and context for the floating panel.
-
-```tsx
-<FloatingActionPanelRoot>
-  {({ mode }) => (
-    // Children components
-  )}
-</FloatingActionPanelRoot>
-```
-
-### FloatingActionPanelTrigger
-
-The button that triggers the floating panel.
-
-```tsx
-<FloatingActionPanelTrigger title="Quick Actions" mode="actions">
-  Actions
-</FloatingActionPanelTrigger>
-```
-
-### FloatingActionPanelContent
-
-The content container for the floating panel.
-
-```tsx
-<FloatingActionPanelContent>
-  {/* Panel content */}
-</FloatingActionPanelContent>
-```
-
-### FloatingActionPanelButton
-
-A styled button for use within the panel.
-
-```tsx
-<FloatingActionPanelButton onClick={() => console.log("Clicked")}>
-  <Icon className="h-4 w-4" />
-  Button Text
-</FloatingActionPanelButton>
-```
-
-### FloatingActionPanelForm
-
-A form component for note-taking mode.
-
-```tsx
-<FloatingActionPanelForm onSubmit={handleSubmit}>
-  {/* Form content */}
-</FloatingActionPanelForm>
-```
-
-### FloatingActionPanelTextarea
-
-A textarea component for use within the form.
-
-```tsx
-<FloatingActionPanelTextarea className="h-24" id="note" />
-```
+<ComponentPreview name="floating-action-panel-demo" />
+</div>
 
 ## Usage
 
@@ -164,6 +102,69 @@ export default function Example() {
     </>
   )}
 </FloatingActionPanelRoot>
+```
+
+## Components
+
+### FloatingActionPanelRoot
+
+The root component that manages the state and context for the floating panel.
+
+```tsx
+<FloatingActionPanelRoot>
+  {({ mode }) => (
+    // Children components
+  )}
+</FloatingActionPanelRoot>
+```
+
+### FloatingActionPanelTrigger
+
+The button that triggers the floating panel.
+
+```tsx
+<FloatingActionPanelTrigger title="Quick Actions" mode="actions">
+  Actions
+</FloatingActionPanelTrigger>
+```
+
+### FloatingActionPanelContent
+
+The content container for the floating panel.
+
+```tsx
+<FloatingActionPanelContent>
+  {/* Panel content */}
+</FloatingActionPanelContent>
+```
+
+### FloatingActionPanelButton
+
+A styled button for use within the panel.
+
+```tsx
+<FloatingActionPanelButton onClick={() => console.log("Clicked")}>
+  <Icon className="h-4 w-4" />
+  Button Text
+</FloatingActionPanelButton>
+```
+
+### FloatingActionPanelForm
+
+A form component for note-taking mode.
+
+```tsx
+<FloatingActionPanelForm onSubmit={handleSubmit}>
+  {/* Form content */}
+</FloatingActionPanelForm>
+```
+
+### FloatingActionPanelTextarea
+
+A textarea component for use within the form.
+
+```tsx
+<FloatingActionPanelTextarea className="h-24" id="note" />
 ```
 
 ## Props
