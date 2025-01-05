@@ -136,7 +136,10 @@ export function MainFeatures() {
           title="Expandable Card"
           description="An interactive card component that expands to reveal more content. Perfect for project status, user profiles, and more."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8">
+          <div className="hidden md:flex md:items-center md:justify-center md:min-h-[300px] md:rounded-lg md:bg-muted/50 md:p-8">
+            <ExpandableCardDemo />
+          </div>
+          <div className="md:hidden">
             <ExpandableCardDemo />
           </div>
         </FeatureCard>
