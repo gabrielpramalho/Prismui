@@ -3,8 +3,12 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Bug, Github, Pencil } from "lucide-react";
-import { getDocsGitHubUrl, getDocsIssueUrl } from "@/lib/github-url";
+import { Bug, Github, Pencil, Sparkles } from "lucide-react";
+import {
+  getDocsGitHubUrl,
+  getDocsIssueUrl,
+  getDocsFeatureRequestUrl,
+} from "@/lib/github-url";
 import useCurrentAnchor from "@/lib/blog/use-current-anchor";
 
 interface TableOfContentsProps {
@@ -67,6 +71,18 @@ export function TableOfContents({
           >
             <Bug className="h-4 w-4" />
             Report an issue
+          </Link>
+          <Link
+            href={getDocsFeatureRequestUrl(
+              `Feature for ${currentPageSlug}`,
+              currentPageSlug
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          >
+            <Sparkles className="h-4 w-4" />
+            Request a component
           </Link>
           <Link
             href={getDocsGitHubUrl(currentPageSlug)}

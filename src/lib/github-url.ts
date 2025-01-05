@@ -106,3 +106,42 @@ ${title || "Documentation Page"}
     labels: ["👀 Exploration Pending", "🐛 bug"],
   });
 }
+
+/**
+ * Gets the GitHub feature request URL with pre-filled template
+ * @param title Optional feature request title
+ * @param description Optional feature description
+ * @returns GitHub new feature request URL
+ */
+export function getDocsFeatureRequestUrl(
+  title?: string,
+  description?: string
+): string {
+  const cleanTitle = `✨ Component Request: `;
+
+  const cleanBody = `### Component Description
+[Describe the component you'd like to see added to PrismUI]
+
+### Use Case
+[Explain how and where you would use this component in your applications]
+
+### Similar Components
+[Are there similar components in other UI libraries? Please provide links or examples]
+- Example from other libraries:
+- Screenshots/mockups (if available):
+
+### Additional Context
+- Requested from: ${description || "Documentation page"}
+
+### References
+[Add any helpful links, documentation, or examples that illustrate your request]`;
+
+  return getGitHubUrl({
+    owner: GITHUB_OWNER,
+    repo: GITHUB_REPO,
+    type: "issue",
+    title: cleanTitle,
+    body: cleanBody,
+    labels: ["✨ component-request"],
+  });
+}
