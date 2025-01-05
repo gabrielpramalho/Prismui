@@ -181,5 +181,16 @@ export const Index: Record<string, any> = {
       subcategory: "overlay",
       chunks: []
     },
+    "pricing": {
+      name: "pricing",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/components/prismui/pricing.tsx"],
+      component: React.lazy(() => import("@/components/prismui/pricing.tsx")),
+      source: "",
+      category: "sections",
+      subcategory: "marketing",
+      chunks: []
+    },
   },
 }

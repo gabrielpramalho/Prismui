@@ -2286,4 +2286,27 @@ export function PopoverButton({
     },
     dependencies: ["framer-motion"],
   },
+  {
+    name: "pricing",
+    type: "registry:ui",
+    category: "sections",
+    subcategory: "marketing",
+    code: `"use client";
+
+// ... (paste the entire component code here)
+`,
+    files: [
+      {
+        path: "components/prismui/pricing.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cli: {
+      npm: 'npx shadcn@latest add "https://www.prismui.tech/r/styles/default/pricing.json"',
+      pnpm: 'pnpm dlx shadcn@latest add "https://www.prismui.tech/r/styles/default/pricing.json"',
+      yarn: 'yarn dlx shadcn@latest add "https://www.prismui.tech/r/styles/default/pricing.json"',
+      bun: 'bunx shadcn@latest add "https://www.prismui.tech/r/styles/default/pricing.json"',
+    },
+    dependencies: ["framer-motion", "canvas-confetti"],
+  },
 ];

@@ -104,6 +104,9 @@ import PopoverForm, {
 import PopoverProject, {
   demoSource as PopoverProjectSource,
 } from "./example/popover-project";
+import PricingBasic, {
+  demoSource as PricingBasicSource,
+} from "./example/pricing-basic";
 
 export const examples: RegistryItem[] = [
   {
@@ -380,6 +383,21 @@ export const examples: RegistryItem[] = [
       "@/components/ui/avatar",
       "@/components/ui/tooltip",
       "lucide-react",
+    ],
+  },
+  {
+    name: "pricing-basic",
+    type: "examples",
+    component: PricingBasic,
+    code: PricingBasicSource,
+    dependencies: [
+      "@/components/section",
+      "@/components/ui/button",
+      "@/components/ui/label",
+      "@/components/ui/switch",
+      "framer-motion",
+      "canvas-confetti",
+      "@number-flow/react",
     ],
   },
 ];

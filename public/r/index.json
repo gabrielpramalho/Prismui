@@ -211,5 +211,22 @@
     ],
     "category": "components",
     "subcategory": "overlay"
+  },
+  {
+    "name": "pricing",
+    "type": "registry:ui",
+    "code": "\"use client\";\n\n// ... (paste the entire component code here)\n",
+    "files": [
+      {
+        "path": "components/prismui/pricing.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "framer-motion",
+      "canvas-confetti"
+    ],
+    "category": "sections",
+    "subcategory": "marketing"
   }
 ]
