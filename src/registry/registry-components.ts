@@ -1237,7 +1237,7 @@ interface DisplayCardProps {
 function DisplayCard({
   className,
   icon = <AudioLines className="size-4 text-green-300" />,
-  title = "Bullshit",
+  title = "Featured",
   description = "This is a skewed card with some text",
   date = "Sep 23",
   iconClassName = "text-green-500",

@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DocsNav } from "@/components/docs-nav";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { docsConfig } from "@/config/docs";
 
 export function DocsSidebar() {
@@ -22,11 +23,13 @@ export function DocsSidebar() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] pr-0">
-        <div className="flex flex-col space-y-4">
-          <div className="flex-1 overflow-auto py-2">
-            <DocsNav config={docsConfig} />
+        <ScrollArea className="h-[calc(100vh-3.5rem)]">
+          <div className="flex flex-col space-y-4">
+            <div className="flex-1 py-2">
+              <DocsNav config={docsConfig} />
+            </div>
           </div>
-        </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );
