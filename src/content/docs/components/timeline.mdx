@@ -66,50 +66,6 @@ export default function Example() {
 }
 ```
 
-## Props
-
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `items` | `TimelineItem[]` | Required | Array of timeline items to display |
-| `initialCount` | `number` | `5` | Number of items to show initially |
-| `className` | `string` | - | Additional CSS classes |
-| `showMoreText` | `string` | "Show More" | Text for the show more button |
-| `showLessText` | `string` | "Show Less" | Text for the show less button |
-| `dotClassName` | `string` | - | Classes for the timeline dots |
-| `lineClassName` | `string` | - | Classes for the timeline lines |
-| `titleClassName` | `string` | - | Classes for item titles |
-| `descriptionClassName` | `string` | - | Classes for item descriptions |
-| `dateClassName` | `string` | - | Classes for dates |
-| `buttonVariant` | `"default" \| "outline" \| "ghost" \| "link"` | `"ghost"` | Button variant |
-| `buttonSize` | `"default" \| "sm" \| "lg"` | `"sm"` | Button size |
-| `animationDuration` | `number` | `0.3` | Animation duration in seconds |
-| `animationDelay` | `number` | `0.1` | Delay between animations |
-| `showAnimation` | `boolean` | `true` | Whether to show animations |
-
-### TimelineItem Interface
-
-```tsx
-interface TimelineItem {
-  date: string;        // ISO date string
-  title: string;       // Item title
-  description?: string; // Optional description
-  href?: string;       // Optional link URL
-  icon?: React.ReactNode; // Optional icon
-}
-```
-
-## Features
-
-- Responsive design with mobile-first approach
-- Smooth animations using Framer Motion
-- Expandable content with "Show More/Less"
-- Automatic date sorting (newest first)
-- Customizable text and styling
-- Support for icons in timeline dots
-- Accessible markup with proper ARIA labels
-- Optional links for each timeline item
-- Hover states and transitions
-
 ## Style Variations
 
 ### Modern Style
@@ -241,13 +197,35 @@ export default function TimelineMinimal() {
   ```
 </Steps>
 
-## Notes
 
-- Built with Framer Motion for smooth animations
-- Uses semantic HTML for better accessibility
-- Supports both mobile and desktop layouts
-- Automatically sorts items by date (newest first)
-- Handles both linked and non-linked items
-- Supports custom styling via className props
-- Fully responsive with mobile-first design
-- Dark mode ready with semantic color tokens
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `items` | `TimelineItem[]` | Required | Array of timeline items to display |
+| `initialCount` | `number` | `5` | Number of items to show initially |
+| `className` | `string` | - | Additional CSS classes |
+| `showMoreText` | `string` | "Show More" | Text for the show more button |
+| `showLessText` | `string` | "Show Less" | Text for the show less button |
+| `dotClassName` | `string` | - | Classes for the timeline dots |
+| `lineClassName` | `string` | - | Classes for the timeline lines |
+| `titleClassName` | `string` | - | Classes for item titles |
+| `descriptionClassName` | `string` | - | Classes for item descriptions |
+| `dateClassName` | `string` | - | Classes for dates |
+| `buttonVariant` | `"default" \| "outline" \| "ghost" \| "link"` | `"ghost"` | Button variant |
+| `buttonSize` | `"default" \| "sm" \| "lg"` | `"sm"` | Button size |
+| `animationDuration` | `number` | `0.3` | Animation duration in seconds |
+| `animationDelay` | `number` | `0.1` | Delay between animations |
+| `showAnimation` | `boolean` | `true` | Whether to show animations |
+
+## Features
+
+- Responsive design with mobile-first approach
+- Smooth animations using Framer Motion
+- Expandable content with "Show More/Less"
+- Automatic date sorting (newest first)
+- Customizable text and styling
+- Support for icons in timeline dots
+- Accessible markup with proper ARIA labels
+- Optional links for each timeline item
+- Hover states and transitions
