@@ -25,7 +25,7 @@ export function DocsSidebar() {
       <SheetContent side="left" className="w-[300px] pr-0">
         <ScrollArea className="h-[calc(100vh-4.5rem)]">
           <div className="flex flex-col space-y-4">
-            <div className="flex-1 py-4">
+            <div className="flex-1 py-6">
               <DocsNav config={docsConfig} />
             </div>
           </div>
