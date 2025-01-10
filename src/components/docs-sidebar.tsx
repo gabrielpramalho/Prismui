@@ -23,9 +23,9 @@ export function DocsSidebar() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] pr-0">
-        <ScrollArea className="h-[calc(100vh-3.5rem)]">
+        <ScrollArea className="h-[calc(100vh-4.5rem)]">
           <div className="flex flex-col space-y-4">
-            <div className="flex-1 py-2">
+            <div className="flex-1 py-4">
               <DocsNav config={docsConfig} />
             </div>
           </div>
